@@ -1,4 +1,4 @@
-package P13084_AI·Îº¿;
+package P13084_AIë¡œë´‡;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

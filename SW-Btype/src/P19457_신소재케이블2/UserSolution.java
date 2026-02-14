@@ -1,4 +1,5 @@
-package P19457_½Å¼ÒÀçÄÉÀÌºí2;
+package P19457_ì‹ ì†Œìž¬ì¼€ì´ë¸”2;
+
 
 import java.util.*;
 class UserSolution
@@ -8,7 +9,7 @@ class UserSolution
 	public int vCnt;
 	public int maxDistNodeIdx;
 	
-	// ÀÌ°Å 
+	// ï¿½Ì°ï¿½ 
 	
 	public void init(int mDevice)
 	{
@@ -29,7 +30,7 @@ class UserSolution
 		V.put(mNewDevice , -1);
 		
 	}
-	// mDevice1 -> mDevice2  ±îÁöÀÇ °Å¸® °è»ê
+	// mDevice1 -> mDevice2  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Å¸ï¿½ ï¿½ï¿½ï¿½
 	public int measure(int mDevice1, int mDevice2)
 	{
 		
@@ -40,10 +41,10 @@ class UserSolution
 	public int test(int mDevice)
 	{
 		vCnt++;
-		// mDeivce·Î ºÎÅÍ °¡Àå ¸Ö¸® ¶³¾îÁø ³ëµå idx Ã£±â
+		// mDeivceï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ idx Ã£ï¿½ï¿½
 		int[] res = dfs(mDevice , 0);
 		vCnt++;
-		// Ã£Àº ³ëµå·Î ºÎÅÍ °¡Àå ¸Ö¸® ¶³¾îÁø °Å¸® Ã£±â. => ÇØ´ç °æ·Î¿¡¼­ mDevice¸¦ ¹«Á¶°Ç Æ÷ÇÔÇØ¾ßµÇ 
+		// Ã£ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Å¸ï¿½ Ã£ï¿½ï¿½. => ï¿½Ø´ï¿½ ï¿½ï¿½Î¿ï¿½ï¿½ï¿½ mDeviceï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ø¾ßµï¿½ 
 		res = dfs2(res[0] , mDevice  , 0 , 0);
 		
 		return res[1];
@@ -54,7 +55,7 @@ class UserSolution
 			return d;
 		}
 		
-		// ¹æ¹®Ã³¸®
+		// ï¿½æ¹®Ã³ï¿½ï¿½
 		V.put(cur, vCnt);
 		for(int[] adj : G.get(cur)) {
 			if(V.get(adj[0]) != vCnt) {
@@ -67,7 +68,7 @@ class UserSolution
 	
 	public int[] dfs(int cur , int d) {
 		
-		// ¹æ¹®Ã³¸®
+		// ï¿½æ¹®Ã³ï¿½ï¿½
 		V.put(cur, vCnt);
 		int[] maxInfo = {cur , d};
 		for(int[] adj : G.get(cur)) {
@@ -83,7 +84,7 @@ class UserSolution
 	}
 	
 	public int[] dfs2(int cur , int target , int d , int flag) {
-		// ¹æ¹®Ã³¸®
+		// ï¿½æ¹®Ã³ï¿½ï¿½
 		
 		V.put(cur, vCnt);
 		int[] maxInfo = {cur , d , flag};

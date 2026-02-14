@@ -1,4 +1,4 @@
-package P19457_½Å¼ÒÀçÄÉÀÌºí2;
+package P19457_ì‹ ì†Œì¬ì¼€ì´ë¸”2;
 
 import java.util.Scanner;
 
