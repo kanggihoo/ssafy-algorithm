@@ -54,27 +54,10 @@ class UserSolution {
 			newtail.prev = newhead;
 		}
 		
-//		public int search() {
-//		int ansIdx=0;
-//		int maxV=0;
-//		
-//		S cur = head.next;
-//		
-//		while(cur !=null) {
-//			if(cur.isFired) {
-//				cur = cur.next;
-//				continue;
-//			}
-//			if(cur.mScore > maxV) {
-//				maxV = cur.mScore;
-//				ansIdx = cur.mIdx;
-//			}else if(cur.mScore == maxV && ansIdx < cur.mIdx) ansIdx = cur.mIdx;
-//			cur = cur.next;
-//		}
-//		
-//		return ansIdx;
-//		
-//	}
+		public static void remove(S s) {
+			s.next.prev = s.prev;
+			s.prev.next = s.next;
+		}
 	}
 
 	public void init() {
@@ -97,15 +80,13 @@ class UserSolution {
 
 	public void fire(int mID) {
 		S s = members[mID];
-		s.next.prev = s.prev;
-		s.prev.next = s.next;
+		LList.remove(s);
 
 	}
 
 	public void updateSoldier(int mID, int mScore) {
 		S s = members[mID]; 
-		s.next.prev = s.prev;
-		s.prev.next = s.next;
+		LList.remove(s);
 		Smanager[s.mTeam][mScore].add_tail(s);
 		
 	}
