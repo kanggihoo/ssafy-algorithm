@@ -1,9 +1,9 @@
-package P13084_AI·Îº¿;
+package P13084_AIë¡œë´‡;
 
 import java.util.PriorityQueue;
 import java.util.*;
 
-// 25°³ Áß 20°³ Å×½ºÆ® Åë°ú ³ª¸ÓÁö ½Ã°£ÃÊ°ú 
+// 25ï¿½ï¿½ ï¿½ï¿½ 20ï¿½ï¿½ ï¿½×½ï¿½Æ® ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½ï¿½Ê°ï¿½ 
 
 class UserSolution
 {
@@ -26,9 +26,9 @@ class UserSolution
 	
 	class R{
 		int idx;
-		int state; // 0: ´ë±â , 1: ¼ö¸®Áß , 2: ÀÛ¾÷Áß
+		int state; // 0: ï¿½ï¿½ï¿½ , 1: ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ , 2: ï¿½Û¾ï¿½ï¿½ï¿½
 		int score;
-		int stayT; // ¼¾ÅÍ ÁøÀÔ½Ã°£ 
+		int stayT; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ô½Ã°ï¿½ 
 		public int wID;
 		
 		public R(int idx , int state , int score , int stayT) {
@@ -46,11 +46,11 @@ class UserSolution
 	{
 		this.N = N;
 		
-		// ·Îº¿ ÃÊ±âÈ­ 
+		// ï¿½Îºï¿½ ï¿½Ê±ï¿½È­ 
 		robots = new R[N+1];
 		for(int i = 1 ; i<=N ; i++) robots[i] = new R(i,0,0,0);
 		
-		// ´ë±âÁßÀÎ ·Îº¿ °ü¸®
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Îºï¿½ ï¿½ï¿½ï¿½ï¿½
 		stayR = new ArrayList<>();
 		for(int i = 0; i <N ; i++) stayR.add(robots[i]); 
 		
@@ -73,7 +73,7 @@ class UserSolution
 		if(mOpt == 0) stayR.sort(maxC); 
 		else stayR.sort(minC);
 		
-		// mNum°³¸¸ »óÅÂ º¯È¯
+		// mNumï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¯
 		for(int i = 0 ; i < mNum ; i++) {
 			R r = stayR.get(i);
 			r.state = 2;

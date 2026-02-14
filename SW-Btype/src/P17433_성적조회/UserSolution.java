@@ -1,4 +1,4 @@
-package P17433_¼ºÀûÁ¶È¸;
+package P17433_ì„±ì ì¡°íšŒ;
 
 class UserSolution {
 	public void init() {

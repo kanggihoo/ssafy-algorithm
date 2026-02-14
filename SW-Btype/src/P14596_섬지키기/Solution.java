@@ -1,4 +1,4 @@
-package P14596_¼¶ÁöÅ°±â;
+package P14596_ì„¬ì§€í‚¤ê¸°;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

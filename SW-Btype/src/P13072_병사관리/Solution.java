@@ -1,4 +1,4 @@
-package P13072_º´»ç°ü¸®;
+package P13072_ë³‘ì‚¬ê´€ë¦¬;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
