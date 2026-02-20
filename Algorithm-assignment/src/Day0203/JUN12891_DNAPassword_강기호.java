@@ -7,18 +7,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.StringTokenizer;
 
-/*
-DAN¹®ÀÚ¿­Àº ¸ðµç ¹®ÀÚ°¡ "A, C, G , TÀÎ ¹®ÀÚ¿­ 
-ÀÓÀÇÀÇ DNA ¹®ÀÚ¿­À» ¸¸µé°í ¸¸µé¾îÁø DNA ¹®ÀÚ¿­ÀÇ ºÎºÐ¹®ÀÚ¿­À» ºñ¹Ð¹øÈ£·Î 
-=> µîÀåÇÏ´Â ¹®ÀÚÀÇ °³¼ö°¡ Æ¯Á¤ °³¼ö ÀÌ»óÀÌ¾î¾ß »ç¿ë°¡´É.
 
-ÀÓÀÇÀÇ DNA¿Í , ºÎºÐ ¹®ÀÚ¿­ ±æÀÌ, °¢ ´Ü¾î°¡ ¸î¹ø ÀÌ»ó µîÀåÇØ¾ß ÇÏ´ÂÁö°¡ ÁÖ¾îÁú¶§
-¸¸µé ¼ö ÀÖ´Â ºñ¹Ð¹øÈ£ Á¾·ù ±¸ÇÏ¶ó 
-ºÎºÐ¹®ÀÚ¿­ÀÌ µîÀåÇÏ´Â À§Ä¡ ´Ù¸¥ ´Ù¸¥ ¹®ÀÚ¿­
- * 
- */
-
-public class JUN12891_DNAPassword_°­±âÈ£ {
+public class JUN12891_DNAPassword_ê°•ê¸°í˜¸ {
 
 
 	
@@ -40,29 +30,29 @@ public class JUN12891_DNAPassword_°­±âÈ£ {
 		st = new StringTokenizer(br.readLine());
 		
 		
-		// Á¶°Ç °è»ê 
+		// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ 
 		for(int i = 0 ; i < 4; i ++) C[i]= Integer.parseInt(st.nextToken());
 		
-		// ¹®ÀÚ °è»ê ¹è¿­
+		// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½è¿­
 		int[] curCnt = new int[4];
 		
-		//ÃÊ±â°ª °è»ê
+		//ï¿½Ê±â°ª ï¿½ï¿½ï¿½
 		for(int i = 0 ; i < P ; i++) {
 			curCnt[table.get(str.charAt(i))] +=1;
 		}
 		int ans = check(curCnt , C) ? 1: 0;
 		
 		
-		// ½½¶óÀÌµù °è»ê 
+		// ï¿½ï¿½ï¿½ï¿½ï¿½Ìµï¿½ ï¿½ï¿½ï¿½ 
 		for(int e = P ; e<S ; e++) {
 			char added = str.charAt(e);
 			char removed = str.charAt(e-P);
 			
-			// ¾÷µ¥ÀÌÆ®
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®
 			curCnt[table.get(added)] +=1;
 			curCnt[table.get(removed)] -=1;
 			
-			// Á¶°Ç ¸¸Á·È®ÀÎ
+			// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½È®ï¿½ï¿½
 			if(check(curCnt ,C)) ans ++;
 		}
 		

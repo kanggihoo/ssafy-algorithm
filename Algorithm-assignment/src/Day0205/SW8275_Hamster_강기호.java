@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class SW8275_Hamster_°­±âÈ£ {
+public class SW8275_Hamster_ê°•ê¸°í˜¸{
 
 	static int N;
 	static int X;
@@ -25,12 +25,12 @@ public class SW8275_Hamster_°­±âÈ£ {
 		
 		for(int t = 1 ; t<=T ; t++) {
 			st = new StringTokenizer(br.readLine());
-			N = Integer.parseInt(st.nextToken()); // ¿ì¸®°³¼ö
-			X = Integer.parseInt(st.nextToken()); // °¢ ¿ì¸® ÃÖ´ë °¡´ÉÇÜ½ºÅÍ
+			N = Integer.parseInt(st.nextToken()); // ï¿½ì¸®ï¿½ï¿½ï¿½ï¿½
+			X = Integer.parseInt(st.nextToken()); // ï¿½ï¿½ ï¿½ì¸® ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ü½ï¿½ï¿½ï¿½
 			histAcsum = new int[N+1];
 			ans_sum = -1;
 			
-			int M = Integer.parseInt(st.nextToken()); // M°³ ±â·Ï
+			int M = Integer.parseInt(st.nextToken()); // Mï¿½ï¿½ ï¿½ï¿½ï¿½
 			
 			A = new int[M][3]; // [l,r,s]
 			for(int i =0 ; i < M ; i++) {
@@ -55,9 +55,9 @@ public class SW8275_Hamster_°­±âÈ£ {
 	
 	public static void dfs(int idx) {
 		if(idx == N) {
-			// Á¶°Ç ºñ±³ 
+			// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ 
 			if(!check()) return;
-			// Å©±â ºñ±³
+			// Å©ï¿½ï¿½ ï¿½ï¿½
 
 			if(histAcsum[N] < ans_sum) return;
 			

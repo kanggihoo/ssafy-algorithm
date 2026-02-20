@@ -5,12 +5,12 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-//³ôÀÌ B ¼±¹Ý 
-//°¢ Á¡¿ø Å°´Â Hi , Á¡¿øÀÌ Å¾À» ½×¾Æ¼­ ¼±¹Ý À§ ¹°°Ç »ç¿ë 
-//Å¾ÀÇ ³ôÀÌ°¡ B ÀÌ»óÀÎ °æ¿ì °ÍÁß ³ôÀÌ°¡ °¡Àå ³·Àº Å¾À» ±¸ÇÏ±â 
+//ï¿½ï¿½ï¿½ï¿½ B ï¿½ï¿½ï¿½ï¿½ 
+//ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Å°ï¿½ï¿½ Hi , ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å¾ï¿½ï¿½ ï¿½×¾Æ¼ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ 
+//Å¾ï¿½ï¿½ ï¿½ï¿½ï¿½Ì°ï¿½ B ï¿½Ì»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Å¾ï¿½ï¿½ ï¿½ï¿½ï¿½Ï±ï¿½ 
 
 
-public class SW1486_TopShelf_°­±âÈ£ {
+public class SW1486_TopShelf_ê°•ê¸°í˜¸{
 	static int ans;
 	static int N;
 	static int B;
@@ -52,16 +52,16 @@ public class SW1486_TopShelf_°­±âÈ£ {
 			ans = Math.min(ans , sum);
 			return;
 		}
-		// Áö±Ý ºÎÅÍ ´Ù ´õÇØµµ sum º¸´Ù ÀÛÀ¸¸é return
+		// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½Øµï¿½ sum ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ return
 		int tmp = sum;
 		for(int i = idx ; i<N;i++) tmp+=H[i];
 		if(tmp < B) return;
 		
-		// ÀÌ¹Ì ans º¸´Ù Å©¸é return
+		// ï¿½Ì¹ï¿½ ans ï¿½ï¿½ï¿½ï¿½ Å©ï¿½ï¿½ return
 		if(sum >= ans) return;
 		
-		dfs(idx+1 , sum+H[idx]); // ¼±ÅÃ
-		dfs(idx+1 , sum); // ¼±ÅÃ X
+		dfs(idx+1 , sum+H[idx]); // ï¿½ï¿½ï¿½ï¿½
+		dfs(idx+1 , sum); // ï¿½ï¿½ï¿½ï¿½ X
 		
 	}
 

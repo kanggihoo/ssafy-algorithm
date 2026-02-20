@@ -6,11 +6,11 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 
-//µÎ ¸íÀÇ ¼Õ´Ô , ÃÖ´ëÇÑ ºñ½ÁÇÑ ¸ÀÀÇ À½½Ä ¸¸µé±â
-//N°³ÀÇ ½ÄÀç·á¸¦ N/2 ·Î ³ª´©¾î  ¿ä¸® (NÂ¦¼ö)
-//A,B À½½ÄÀÇ ¸ÀÀÇ Â÷ÀÌ°¡ ÃÖ¼Ò°¡ µÇµµ·Ï ºÐ¹è 
+//ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Õ´ï¿½ , ï¿½Ö´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½
+//Nï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½á¸¦ N/2 ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  ï¿½ä¸® (NÂ¦ï¿½ï¿½)
+//A,B ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì°ï¿½ ï¿½Ö¼Ò°ï¿½ ï¿½Çµï¿½ï¿½ï¿½ ï¿½Ð¹ï¿½ 
 
-public class SW4012_TheChef_°­±âÈ£ {
+public class SW4012_TheChef_ê°•ê¸°í˜¸{
 	static int[][] S = new int[16][16];
 
 	public static void main(String[] args) throws IOException{
@@ -32,10 +32,10 @@ public class SW4012_TheChef_°­±âÈ£ {
 			int maxRange = ((1<<N/2)-1) << N/2;
 			for(int i= 1 ; i<=maxRange ; i++) {
 				
-				// 1°³¼ö N/2 ÀÎ °æ¿ì 
+				// 1ï¿½ï¿½ï¿½ï¿½ N/2 ï¿½ï¿½ ï¿½ï¿½ï¿½ 
 				if(Integer.bitCount(i) == N/2) {
 					int side = (i^((1<<N)-1));
-					// Á¶ÇÕ °è»ê 
+					// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ 
 					int c1 = calculate(i,N);
 					int c2 = calculate(side, N);
 //					System.out.printf("%d %d %d %d\n" , i,c1 , side , c2);

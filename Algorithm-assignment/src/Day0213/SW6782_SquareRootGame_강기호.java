@@ -5,13 +5,13 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-//2ÀÌ»ó Á¤¼ö N 
-//NÀ»  N+1·Î º¯°æ°¡´É
-//sqrt N ÀÌ Á¤¼öÀÌ¸é NÀ» ·çÆ® NÀ¸·Î º¯°æ°¡´É 
-//NÀ» 2·Î ¸¸µé±â
+//2ï¿½Ì»ï¿½ ï¿½ï¿½ï¿½ï¿½ N 
+//Nï¿½ï¿½  N+1ï¿½ï¿½ ï¿½ï¿½ï¿½æ°¡ï¿½ï¿½
+//sqrt N ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì¸ï¿½ Nï¿½ï¿½ ï¿½ï¿½Æ® Nï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½æ°¡ï¿½ï¿½ 
+//Nï¿½ï¿½ 2ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½
 
 
-public class SW6782_SquareRootGame_°­±âÈ£ {
+public class SW6782_SquareRootGame_ê°•ê¸°í˜¸{
 
 	public static void main(String[] args) throws IOException{
 		// TODO Auto-generated method stub
@@ -23,7 +23,7 @@ public class SW6782_SquareRootGame_°­±âÈ£ {
 		for(int t=1 ; t<=T ; t++) {
 			long N = Long.parseLong(br.readLine());
 			int ans = 0;
-			// N º¸´Ù Å« ·çÆ®ÇßÀ»¶§ Á¤¼ö°¡ µÇ´Â ¼ýÀÚ 
+			// N ï¿½ï¿½ï¿½ï¿½ Å« ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ç´ï¿½ ï¿½ï¿½ï¿½ï¿½ 
 			
 			while(N!=2) {
 				long sqrted =(long)Math.sqrt(N);

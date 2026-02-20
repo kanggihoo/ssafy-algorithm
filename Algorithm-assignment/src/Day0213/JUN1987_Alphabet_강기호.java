@@ -7,7 +7,7 @@ import java.util.HashSet;
 import java.util.StringTokenizer;
 
 
-public class JUN1987_Alphabet_°­±âÈ£ {
+public class JUN1987_Alphabet_ê°•ê¸°í˜¸ {
 	
 	static int[] dx = {0,0,1,-1};
 	static int[] dy = {1,-1,0,0};

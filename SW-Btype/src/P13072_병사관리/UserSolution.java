@@ -5,7 +5,7 @@ class UserSolution {
 	LList[][] Smanager;
 	
 	
-	class S {
+	static class S {
 		int mIdx;
 		int mTeam;
 		S next;
@@ -16,9 +16,14 @@ class UserSolution {
 			this.mTeam = mTeam;
 		}
 	}
-	class LList {
+	static class LList {
 		S head; 
 		S tail;
+		
+		public static void remove(S s) {
+			s.next.prev = s.prev;
+			s.prev.next = s.next;
+		}
 
 		public LList() {
 			head = new S(-1,-1);
@@ -54,10 +59,7 @@ class UserSolution {
 			newtail.prev = newhead;
 		}
 		
-		public static void remove(S s) {
-			s.next.prev = s.prev;
-			s.prev.next = s.next;
-		}
+
 	}
 
 	public void init() {

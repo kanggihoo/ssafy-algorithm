@@ -5,17 +5,17 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-//ÇÜ¹ö°Å ¸ÀÀº À¯ÁöÇÏ¸é¼­ Á¤ÇØÁø Ä®·Î¸® ³ÑÁö ¾Ê´Â ÇÜ¹ö°Å ÁÖ¹®
-//ÇÜ¹ö°Å °¡°Ô´Â °í°´ÀÌ ¿øÇÏ´Â Á¶ÇÕÀ¸·Î ÇÜ¹ö°Å ¸¸µé¾îÁÜ
+//ï¿½Ü¹ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸é¼­ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ä®ï¿½Î¸ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ê´ï¿½ ï¿½Ü¹ï¿½ï¿½ï¿½ ï¿½Ö¹ï¿½
+//ï¿½Ü¹ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ô´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ü¹ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 //
 //
-//ÀÚ½ÅÀÌ ¸Ô¾ú´ø Àç·á¿¡ ´ëÇÑ ¸ÀÀ» Á¡¼öÈ­ 
-//Àç·á¿Í , °¡°Ô¿¡¼­ Á¦°øÇÏ´Â Àç·á¿¡ ´ëÇÑ Ä®·Î¸® ÁÖ¾îÁú¶§ 
-//Á¤ÇØÁø Ä®·Î¸® ÀÌÇÏ Á¶ÇÕ Áß °¡Àå ¼±È£ÇÏ´Â ÇÜ¹ö°Å Á¶ÇÕ 
+//ï¿½Ú½ï¿½ï¿½ï¿½ ï¿½Ô¾ï¿½ï¿½ï¿½ ï¿½ï¿½á¿¡ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½È­ 
+//ï¿½ï¿½ï¿½ï¿½ , ï¿½ï¿½ï¿½Ô¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½á¿¡ ï¿½ï¿½ï¿½ï¿½ Ä®ï¿½Î¸ï¿½ ï¿½Ö¾ï¿½ï¿½ï¿½ï¿½ï¿½ 
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ä®ï¿½Î¸ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È£ï¿½Ï´ï¿½ ï¿½Ü¹ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 
 //
-//°°Àº Àç·á ¿©·¯¹ø »ç¿ëºÒ°¡, 
+//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ò°ï¿½, 
 
-public class SW5215_HambergerDiet_°­±âÈ£ {
+public class SW5215_HambergerDiet_ê°•ê¸°í˜¸ {
 
 	public static void main(String[] args) throws IOException{
 		// TODO Auto-generated method stub
@@ -29,13 +29,13 @@ public class SW5215_HambergerDiet_°­±âÈ£ {
 		
 		for(int t = 1 ; t<=T ; t++) {
 			st = new StringTokenizer(br.readLine());
-			int N = Integer.parseInt(st.nextToken()); // Àç·á¼ö
-			int L = Integer.parseInt(st.nextToken()); // Á¦ÇÑ Ä®·Î¸® 
+			int N = Integer.parseInt(st.nextToken()); // ï¿½ï¿½ï¿½ï¿½
+			int L = Integer.parseInt(st.nextToken()); // ï¿½ï¿½ï¿½ï¿½ Ä®ï¿½Î¸ï¿½ 
 			
 			for(int i = 0 ; i < N ; i++) {
 				st = new StringTokenizer(br.readLine());
-				Info[i][0] = Integer.parseInt(st.nextToken()); // Á¡¼ö
-				Info[i][1] = Integer.parseInt(st.nextToken()); // Ä®·Î¸® 
+				Info[i][0] = Integer.parseInt(st.nextToken()); // ï¿½ï¿½ï¿½ï¿½
+				Info[i][1] = Integer.parseInt(st.nextToken()); // Ä®ï¿½Î¸ï¿½ 
 			}
 			
 			int[] D = new int[L+1];

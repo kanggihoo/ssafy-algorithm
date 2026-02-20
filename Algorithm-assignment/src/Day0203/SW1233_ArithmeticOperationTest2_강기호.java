@@ -4,20 +4,8 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-/*
-»çÄ¢¿¬»ê ÀÌÁøÆ®¸®
-Á¤Á¡¿¡ ¿¬»êÀÚ°¡ ÀÖÀ¸¸é ¿¬»êÀÚÀÇ ¿ŞÂÊ ¼­ºê Æ®¸®ÀÇ °á°ú¿Í, ¿À¸¥ÂÊ ¼­ºê Æ®¸® °á°ú¸¦ »ç¿ëÇØ¼­ ¿¬»êÀÚ Àû¿ë
-¾çÀÇÁ¤¼ö, »çÄ¢ ¿¬»êÀÚ·Î ±¸¼ºµÈ ÀÌÁø Æ®¸® ÁÖ¾îÁú¶§ ÀûÀıÇÑ ½ÄÀÎÁö È®ÀÎ 
-°¡´ÉÇÏ¸é 1, ºÒ°¡´É½Ã 0 Ãâ·Â
 
-10°³ Å×½ºÆ® ÄÉÀÌ½º 
-¿ÏÀü ÀÌÁø Æ®¸® Çü½Ä(À§¿¡¼­ ºÎÅÍ ÁÂ->¿ì ¹æÇâÀ¸·Î)
-
-=> ¼­ºê±×·¡ÇÁ ·çÆ®´Â ¿¬»êÀÚ, ÀÚ½ÄÀº ¼ıÀÚ
-¸®ÇÁ³ëµå´Â ¹«Á¶°Ç ¼ıÀÚ, ±×¿ÜÀÇ °æ¿ì ¸ğµÎ ¿¬»êÀÚ 
-*/
-
-public class SW1233_ArithmeticOperationTest2_°­±âÈ£ {
+public class SW1233_ArithmeticOperationTest2_ê°•ê¸°í˜¸ {
 	static boolean ans;
 	static char[] sign;
 	static int N;
@@ -31,7 +19,7 @@ public class SW1233_ArithmeticOperationTest2_°­±âÈ£ {
 			N = Integer.parseInt(br.readLine());
 			sign = new char[N+1];
 			
-			// ÀÌÁø Æ®¸® °ª ÀúÀå 
+			// ï¿½ï¿½ï¿½ï¿½ Æ®ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 
 			for(int i = 0 ; i < N ; i++) {
 				st = new StringTokenizer(br.readLine());
 				int node = Integer.parseInt(st.nextToken());
@@ -39,7 +27,7 @@ public class SW1233_ArithmeticOperationTest2_°­±âÈ£ {
 				sign[node] = str.charAt(0);
 			}
 			
-			// 1¹ø ºÎÅÍ ¼øÈ¸
+			// 1ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¸
 			sb.append("#").append(t).append(" ");
 			if(dfs(1)) sb.append("1");
 			else sb.append("0");
@@ -54,12 +42,12 @@ public class SW1233_ArithmeticOperationTest2_°­±âÈ£ {
 		
 	}
 	public static boolean dfs(int idx) {
-		// ÇöÀç ³ëµå°¡ ¸®ÇÁÀÎÁö È®ÀÎ
-		if(idx*2 > N) { // ¸®ÇÁ ³ëµå=> ¹«Á¶°Ç ¼ıÀÚ
+		// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½å°¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½
+		if(idx*2 > N) { // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½=> ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 			if(isSign(sign[idx])) return false;
 			return true;
 			
-		}else { // ¸®ÇÁ ³ëµå ¾Æ´Ô
+		}else { // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Æ´ï¿½
 			if(!isSign(sign[idx])) return false;
 			
 			return dfs(idx*2) && dfs(idx*2+1);

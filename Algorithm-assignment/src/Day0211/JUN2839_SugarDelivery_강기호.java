@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class JUN2839_SugarDelivery_°­±âÈ£ {
+public class JUN2839_SugarDelivery_ê°•ê¸°í˜¸{
 	
 	static int r;
 	static int c;
