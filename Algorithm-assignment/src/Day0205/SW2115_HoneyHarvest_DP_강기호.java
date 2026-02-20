@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class SW2115_HoneyHarvest_DP_°­±âÈ£ {
+public class SW2115_HoneyHarvest_DP_ê°•ê¸°í˜¸ {
 	static int N;
 	static int M;
 	static int C;
@@ -34,7 +34,7 @@ public class SW2115_HoneyHarvest_DP_°­±âÈ£ {
 				}
 			}
 			
-			// °¢ À§Ä¡¿¡¼­ÀÇ dp °è»ê
+			// ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ dp ï¿½ï¿½ï¿½
 			int[][] maxProfit = new int[N][N];
 			for(int i = 0 ; i < N ; i++) {
 				for(int j = 0 ; j<N-M+1 ; j++) {
@@ -42,7 +42,7 @@ public class SW2115_HoneyHarvest_DP_°­±âÈ£ {
 				}
 			}
 			
-			// ÀÏ²Û Å½»ö
+			// ï¿½Ï²ï¿½ Å½ï¿½ï¿½
 			int ans = 0;
 			for(int i=0;i<N*N ; i++ ) {
 				int w1R = i/N;

@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
-public class SW4012_TheChef_DFS_°­±âÈ£ {
+public class SW4012_TheChef_DFS_ê°•ê¸°í˜¸ {
 
 	static int[][] S = new int[16][16];
 	static int N;
@@ -43,7 +43,7 @@ public class SW4012_TheChef_DFS_°­±âÈ£ {
 	public static void dfs(int idx ,int cnt, int state) {
 		if(N-idx+cnt  < N/2) return ;
 		if(idx == N) {
-			// °è»ê 
+			// ï¿½ï¿½ï¿½ 
 			ans = Math.min(ans, calculate(state));
 			return;
 		}

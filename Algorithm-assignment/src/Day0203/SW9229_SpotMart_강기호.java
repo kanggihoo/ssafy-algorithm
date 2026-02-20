@@ -6,13 +6,13 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-//°úÀÚ µÎ ºÀÁö ¾ç¼Õ¿¡ 
-//N°³ °úÀÚ ºÀÀÚ, °¢ ºÀÁö´Â ai ±×·¥
-//µÎ ºÀÁö ¹«°Ô ÇÕÀÌ M ±×·¥ ÃÊ°ú X
-//µé ¼ö ÀÖ´Â ÃÖ´ë ¹«°Ô ÇÕ
+//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Õ¿ï¿½ 
+//Nï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ai ï¿½×·ï¿½
+//ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ M ï¿½×·ï¿½ ï¿½Ê°ï¿½ X
+//ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
 
 
-public class SW9229_SpotMart_°­±âÈ£ {
+public class SW9229_SpotMart_ê°•ê¸°í˜¸{
 	
 	
 	public static void main(String[] args) throws IOException{
@@ -30,10 +30,10 @@ public class SW9229_SpotMart_°­±âÈ£ {
 			st = new StringTokenizer(br.readLine());
 			for(int i = 0 ; i < N ; i++) A[i] = Integer.parseInt(st.nextToken());
 			
-			// Á¤·Ä
+			// ï¿½ï¿½ï¿½ï¿½
 			Arrays.sort(A);
 			
-			// ½½¶óÀÌµù À©µµ¿ì
+			// ï¿½ï¿½ï¿½ï¿½ï¿½Ìµï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			int s = 0; int e=N-1;
 			int ans = 0;
 			

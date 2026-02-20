@@ -4,20 +4,8 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-/*
-»çÄ¢¿¬»ê ÀÌÁøÆ®¸®
-Á¤Á¡¿¡ ¿¬»êÀÚ°¡ ÀÖÀ¸¸é ¿¬»êÀÚÀÇ ¿ŞÂÊ ¼­ºê Æ®¸®ÀÇ °á°ú¿Í, ¿À¸¥ÂÊ ¼­ºê Æ®¸® °á°ú¸¦ »ç¿ëÇØ¼­ ¿¬»êÀÚ Àû¿ë
-¾çÀÇÁ¤¼ö, »çÄ¢ ¿¬»êÀÚ·Î ±¸¼ºµÈ ÀÌÁø Æ®¸® ÁÖ¾îÁú¶§ ÀûÀıÇÑ ½ÄÀÎÁö È®ÀÎ 
-°¡´ÉÇÏ¸é 1, ºÒ°¡´É½Ã 0 Ãâ·Â
 
-10°³ Å×½ºÆ® ÄÉÀÌ½º 
-¿ÏÀü ÀÌÁø Æ®¸® Çü½Ä(À§¿¡¼­ ºÎÅÍ ÁÂ->¿ì ¹æÇâÀ¸·Î)
-
-=> ¼­ºê±×·¡ÇÁ ·çÆ®´Â ¿¬»êÀÚ, ÀÚ½ÄÀº ¼ıÀÚ
-¸®ÇÁ³ëµå´Â ¹«Á¶°Ç ¼ıÀÚ, ±×¿ÜÀÇ °æ¿ì ¸ğµÎ ¿¬»êÀÚ 
-*/
-
-public class SW1233_ArithmeticOperationTest_°­±âÈ£ {
+public class SW1233_ArithmeticOperationTest_ê°•ê¸°í˜¸ {
 	static boolean flag;
 
 	
@@ -25,7 +13,7 @@ public class SW1233_ArithmeticOperationTest_°­±âÈ£ {
 		StringBuilder sb = new StringBuilder();
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st;
-		// ÀÔ·Â
+		// ï¿½Ô·ï¿½
 		for(int t=1 ; t<=10 ; t++) {
 			
 			int N = Integer.parseInt(br.readLine()); //
@@ -33,14 +21,14 @@ public class SW1233_ArithmeticOperationTest_°­±âÈ£ {
 			for(int i = 0 ; i < N ; i++) {
 				st = new StringTokenizer(br.readLine());
 				
-				if(flag) continue; // ÀÌ¹Ì ´äÀ» ±¸ÇÑ °æ¿ì ÀÔ·Â¸¸ ¹Ş°í pass 
+				if(flag) continue; // ï¿½Ì¹ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Ô·Â¸ï¿½ ï¿½Ş°ï¿½ pass 
 				
 				int node = Integer.parseInt(st.nextToken());
 				char ch = st.nextToken().charAt(0);
 						
-				if(st.countTokens() == 2 && !checkSign(ch)) { // ÀÚ½Ä ³ëµå°¡ ÀÖ´Âµ¥ ÇöÀç ³ëµå °ªÀÌ ¿¬»êÀÚ°¡ ¾Æ´Ñ°æ¿ì
+				if(st.countTokens() == 2 && !checkSign(ch)) { // ï¿½Ú½ï¿½ ï¿½ï¿½å°¡ ï¿½Ö´Âµï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ú°ï¿½ ï¿½Æ´Ñ°ï¿½ï¿½
 					flag = true;
-				}else if(st.countTokens()==0 && checkSign(ch)) flag = true; // ¸®ÇÁ ³ëµåÀÎµ¥ ¿¬»êÀÚÀÎ °æ¿ì 
+				}else if(st.countTokens()==0 && checkSign(ch)) flag = true; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Îµï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ 
 			}
 			sb.append("#").append(t).append(" ");
 			if(flag) sb.append("0");

@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class SW5215_HambergerDiet_°­±âÈ£ {
+public class SW5215_HambergerDiet_ê°•ê¸°í˜¸{
 	
 	static int[][] Info = new int[20][2];
 	static int N;
@@ -21,12 +21,12 @@ public class SW5215_HambergerDiet_°­±âÈ£ {
 		
 		for(int t = 1 ; t<=T ; t++) {
 			st = new StringTokenizer(br.readLine());
-			N = Integer.parseInt(st.nextToken()); // Àç·á¼ö
-			L = Integer.parseInt(st.nextToken()); // Á¦ÇÑ Ä®·Î¸® 
+			N = Integer.parseInt(st.nextToken()); // ï¿½ï¿½ï¿½ï¿½
+			L = Integer.parseInt(st.nextToken()); // ï¿½ï¿½ï¿½ï¿½ Ä®ï¿½Î¸ï¿½ 
 			for(int i = 0 ; i < N ; i++) {
 				st = new StringTokenizer(br.readLine());
-				Info[i][0] = Integer.parseInt(st.nextToken()); // Á¡¼ö
-				Info[i][1] = Integer.parseInt(st.nextToken()); // Ä®·Î¸® 
+				Info[i][0] = Integer.parseInt(st.nextToken()); // ï¿½ï¿½ï¿½ï¿½
+				Info[i][1] = Integer.parseInt(st.nextToken()); // Ä®ï¿½Î¸ï¿½ 
 			}
 
 			sb.append("#").append(t).append(" ").append(dfs(0,0,0)).append("\n");

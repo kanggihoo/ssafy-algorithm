@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class SW2806_Nqueen_°­±âÈ£ {
+public class SW2806_Nqueen_ê°•ê¸°í˜¸ {
 	static int ans;
 	static int N;
 
@@ -30,18 +30,18 @@ public class SW2806_Nqueen_°­±âÈ£ {
 	}
 	
 	public static void dfs(int r,  int c , int d1 , int d2) {
-		// d1 : ¿ì»óÇâ ´ë°¢¼±
-		// d2 : ¿ìÇÏ´Ü ´ë°¢¼±
+		// d1 : ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ë°¢ï¿½ï¿½
+		// d2 : ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ë°¢ï¿½ï¿½
 		if(r == N) {
 			ans++;
 			return;
 		}
-		// ¿­ ¼±ÅÃ  
+		// ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½  
 		for(int i = 0 ; i < N ; i++) {
-			// ¿­°Ë»ç , ¿ì»óÇâ ´ë°¢¼± , ¿ìÇÏ´Ü ´ë°¢¼± °Ë»ç
+			// ï¿½ï¿½ï¿½Ë»ï¿½ , ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ë°¢ï¿½ï¿½ , ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ë°¢ï¿½ï¿½ ï¿½Ë»ï¿½
 			int shift = N-1 + r-i;
 			if((c&(1<<i)) ==0 && (d1&(1<<r+i)) ==0 && (d2&(1<<shift)) ==0) {
-				// r,i ¼±ÅÃ ÇÑ °æ¿ì	
+				// r,i ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½	
 				dfs(r+1 , c|(1<<i) , d1|(1<<r+i) , d2|(1<<shift));
 				
 			}

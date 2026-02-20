@@ -6,12 +6,12 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-//N°³ÀÇ ¼ýÀÚ°¡ ÀûÇôÀÖ´Â °ÔÀÓÆÇ, »çÄ¢¿¬»êÀÚ Ä«µå¸¦ ¼ýÀÚ¿¡ ³¢¿ö ³Ö¾î ´Ù¾çÇÑ °ªÀ» ±¸ÇÏ±â
-//¿¬»êÀÚÀÇ ¿ì¼±¼øÀ§ °í·ÁÇÏÁö ¾Ê°í ¿ÞÂÊ -> ¿À¸¥ÂÊÀ¸·Î °è»ê
-//±× °á°ú°¡ ÃÖ´ë°¡ µÇ´Â ¼ö½Ä°ú, ÃÖ¼Ò°¡ µÇ´Â ¼ö½ÄÀ» Ã£°í µÎ °ªÀÇ Â÷ÀÌ Ãâ·Â
+//Nï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Ä¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ä«ï¿½å¸¦ ï¿½ï¿½ï¿½Ú¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¾ï¿½ ï¿½Ù¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï±ï¿½
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ì¼±ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê°ï¿½ ï¿½ï¿½ï¿½ï¿½ -> ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+//ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ë°¡ ï¿½Ç´ï¿½ ï¿½ï¿½ï¿½Ä°ï¿½, ï¿½Ö¼Ò°ï¿½ ï¿½Ç´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã£ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 
 
-public class SW4008_MakingNumber_°­±âÈ£ {
+public class SW4008_MakingNumber_ê°•ê¸°í˜¸{
 	
 	static int N;
 	static int minV;
@@ -31,19 +31,19 @@ public class SW4008_MakingNumber_°­±âÈ£ {
 			N = Integer.parseInt(br.readLine());
 			
 			
-			// + , - , * , / ¼ø¼­
+			// + , - , * , / ï¿½ï¿½ï¿½ï¿½
 			st = new StringTokenizer(br.readLine());
 			for(int i = 0 ; i< 4 ; i++) {
 				signCnt[i] = Integer.parseInt(st.nextToken());
 			}
 			
-			// ¼ýÀÚ ¾÷µ¥ÀÌÆ®
+			// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®
 			st = new StringTokenizer(br.readLine());
 			for(int i = 0 ; i < N ; i++) {
 				numbers[i] = Integer.parseInt(st.nextToken());
 			}
 			
-			// °è»ê
+			// ï¿½ï¿½ï¿½
 			minV = Integer.MAX_VALUE;
 			maxV = Integer.MIN_VALUE;
 			dfs(0,numbers[0]);
@@ -61,17 +61,17 @@ public class SW4008_MakingNumber_°­±âÈ£ {
 			return;
 		}
 		
-		// ¿¬»êÀÚ ¼±ÅÃµÇ°í °è»ê
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ÃµÇ°ï¿½ ï¿½ï¿½ï¿½
 		for(int i = 0 ; i<4 ; i++) {
 			if(signCnt[i] <= 0) continue;
 			signCnt[i] -=1;
-			if(i == 0) { // + ¿¬»ê
+			if(i == 0) { // + ï¿½ï¿½ï¿½ï¿½
 				dfs(time+1 , sum+numbers[time+1]);
-			}else if(i==1) { // - ¿¬»ê
+			}else if(i==1) { // - ï¿½ï¿½ï¿½ï¿½
 				dfs(time+1 , sum-numbers[time+1]);
-			}else if(i==2) { // * ¿¬»ê 
+			}else if(i==2) { // * ï¿½ï¿½ï¿½ï¿½ 
 				dfs(time+1 , sum*numbers[time+1]);
-			}else { // / ¿¬»ê 
+			}else { // / ï¿½ï¿½ï¿½ï¿½ 
 				dfs(time+1 , sum/numbers[time+1]);
 			}
 			signCnt[i] +=1;

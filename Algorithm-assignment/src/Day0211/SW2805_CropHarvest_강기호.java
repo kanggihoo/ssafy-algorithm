@@ -7,10 +7,10 @@ import java.util.Arrays;
 import java.util.StringTokenizer;
 
 
-//NxN ³óÀå, NÀº È¦¼ö
-//¼öÈ®Àº ³óÀå Å©±â¿¡ µü ¸Â´Â Á¤»ç°¢Çü ¸¶¸§¸ð ÇüÅÂ¸¸ °¡´É 
+//NxN ï¿½ï¿½ï¿½ï¿½, Nï¿½ï¿½ È¦ï¿½ï¿½
+//ï¿½ï¿½È®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Å©ï¿½â¿¡ ï¿½ï¿½ ï¿½Â´ï¿½ ï¿½ï¿½ï¿½ç°¢ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Â¸ï¿½ ï¿½ï¿½ï¿½ï¿½ 
 
-public class SW2805_CropHarvest_°­±âÈ£ {
+public class SW2805_CropHarvest_ê°•ê¸°í˜¸ {
 
 	public static void main(String[] args) throws IOException{
 		// TODO Auto-generated method stub
@@ -32,7 +32,7 @@ public class SW2805_CropHarvest_°­±âÈ£ {
 				}
 			}
 			
-			// ¸¶¸§¸ð °è»ê
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 			int ans = 0;
 			for(int i = 0; i<N/2 ; i++) {
 				for(int j = 0 ; j<i*2+1 ; j++) {
