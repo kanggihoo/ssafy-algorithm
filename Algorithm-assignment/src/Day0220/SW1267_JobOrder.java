@@ -22,6 +22,7 @@ public class SW1267_JobOrder {
 		
 		for(int t=1 ; t<=T ; t++) {
 			st = new StringTokenizer(br.readLine());
+			sb2.setLength(0);
 			int V = Integer.parseInt(st.nextToken());
 			int E = Integer.parseInt(st.nextToken());
 			
