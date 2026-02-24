@@ -67,6 +67,7 @@ public class SW1267_JobOrder {
 			sb.append("#").append(t).append(" ").append(sb2).append("\n");
 		}
 		System.out.print(sb);
+
 	}
 
 }
