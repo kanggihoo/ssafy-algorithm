@@ -97,7 +97,7 @@ public class P2382_미생물격리_모의 {
             	
             	// 동일한 위치에 여러 군집 있는 경우 업데이트
             	Group g = G[0];
-            	for(int j = 1 ; j<K ; i++) {
+            	for(int j = 1 ; j<K ; j++) {
             		Group ng = G[j];
             		if(ng.isDead) break;
             		if(g.y == ng.y && g.x == ng.x) {
