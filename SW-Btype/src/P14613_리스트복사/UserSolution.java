@@ -1,10 +1,40 @@
 package P14613_리스트복사;
-
+import java.util.*;
 class UserSolution
 {
-	// 메모리 제한은 256MB 
+	// 메모리 제한은 256MB
+
+	public Map<String, ListState>P;
+	public int[][] original;
+	public int originalCnt;
+
+	class Node{
+		int idx;
+		int v;
+		Node pre;
+
+		public Node(int idx , int v , Node n){
+			this.idx = idx;
+			this.v = v;
+			this.pre = n;
+		}
+	}
+
+	class ListState {
+		int originalIdx;
+		Node lastUpdated;
+
+		public ListState( int idx , Node n){
+			this.originalIdx = idx;
+			this.lastUpdated = n;
+		}
+	}
+
 	public void init()
 	{
+		P = new HashMap<>();
+		original = new int[10][];
+		originalCnt =0;
 	}
 	
 	
@@ -13,10 +43,16 @@ class UserSolution
 	// 호출 횟수 10 
 	public void makeList(char mName[], int mLength, int mListValue[])
 	{
-		// 여기는 진짜로 배열을 만들어야 하는거고 (2개씩 절대 변하지 않는 원본이랑 변할 수 있는 거 2개로??)
-		short[] a = new short[mLength];
-		
-		
+		// 여기는 진짜로 배열을 만들어야 하는거고
+		String name = getName(mName);
+		ListState curState = new ListState(originalCnt , null);
+		P.put(name , curState);
+		int[] tmp = new int[mLength];
+		for(int i = 0 ; i < mLength ; i++){
+			tmp[i] = mListValue[i];
+		}
+		original[originalCnt++] = tmp;
+
 	}
 	
 	// mDest 리스트를 새로 생성 , mSrc 리스트를 mDest에 복사 , ture이면 값을 모두 복사 , false 인 경우 주소만 복사
@@ -24,18 +60,26 @@ class UserSolution
 	// 호출횟수 : 5000 
 	public void copyList(char mDest[], char mSrc[], boolean mCopy)
 	{
-		if(mCopy) { // 모두 복사 -> 근데 이게 모두 복사하지 않 고 (복사 여부만 
-			
-		}else { // 주소만 복사 
-			
+
+		ListState curState = P.get(getName(mSrc));
+		String copiedName = getName(mDest);
+		Node curNode = curState.lastUpdated;
+		if(mCopy) { // 모두 복사
+			ListState newState = new ListState(curState.originalIdx , curNode);
+			P.put(copiedName , newState);
+		}else{
+			P.put(copiedName , curState);
 		}
+
 	}
 	
 	// mIdx 번째 원소 값을 변경 (0부터 인덱스 시작) 
 	// 호출 횟수 : 100,000
 	public void updateElement(char mName[], int mIndex, int mValue)
 	{
-		// mName과 연결된 게 누구인지 알아햐 함. 
+		ListState curState = P.get(getName(mName));
+		Node newNode = new Node(mIndex , mValue , curState.lastUpdated);
+		curState.lastUpdated = newNode;
 	}
 
 	// mIndex 번째 원소 반환
@@ -45,6 +89,21 @@ class UserSolution
 	//  => 업데이트 연산인데 mIndex랑 다르면 pass 업데이트 할 필요없고, 
 	public int element(char mName[], int mIndex)
 	{
-		return 0;
+		ListState curState = P.get(getName(mName));
+		int oIdx = curState.originalIdx;
+		Node curNode = curState.lastUpdated;
+		while(curNode!=null){
+			if(curNode.idx == mIndex ) return curNode.v;
+			curNode = curNode.pre;
+		}
+		return original[oIdx][mIndex];
+	}
+
+	public String getName(char[] names){
+		int idx = 0;
+		while(names[idx]!='\0'){
+			idx++;
+		}
+		return new String(names , 0 , idx);
 	}
 }
