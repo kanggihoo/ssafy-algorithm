@@ -8,8 +8,6 @@ import java.nio.Buffer;
 //비상연락 당번 정보 주어질때 가장 나중에 연락을 받는 사람 중 번호가 가장 큰 사람 구하라
 
 import java.util.*;
-
-import sun.java2d.pipe.BufferedBufImgOps;
 public class SW1238_Contact_강기호 {
 
 	public static void main(String[] args) throws IOException{
