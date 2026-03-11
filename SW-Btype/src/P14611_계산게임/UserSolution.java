@@ -170,4 +170,3 @@ class UserSolution {
         jV= mValue;
     }
 }
-
