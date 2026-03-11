@@ -9,9 +9,62 @@
 
 // 문자열로 다루어야 되고, 누가 큰지 로직은 따로 만들어야할듯
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
 // 일단 둘중에 더 긴놈이 무조건 더 크고, 길이같으면 맨 앞에서 부터 숫자하나씩 비교
 //
 public class G3_1082 {
+    static int[] A;
+    static String[] D;
+    static int N;
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        N  = Integer.parseInt(br.readLine());
+        A = new int[N];
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        for(int i = 0 ;  i< N ; i++){
+            A[i] = Integer.parseInt(st.nextToken());
+        }
 
+        int M = Integer.parseInt(br.readLine());
 
+        D = new String[M+1];
+        String ans = "0";
+
+        for(int i = 1; i < N ; i++){
+            if(M-A[i]>=0){
+                String res = dfs(M-A[i]);
+                ans = check(ans , i+res);
+            }
+
+        }
+        System.out.print(ans);
+    }
+
+    public static String dfs(int m){
+        if(D[m] != null) return D[m];
+        D[m] = "";
+        for(int i = 0 ; i < N ; i++){
+            if(m-A[i] >= 0){
+                String res = i+dfs(m-A[i]);
+                D[m] = check(res , D[m]);
+            }
+
+        }
+        return D[m];
+    }
+
+    public static String check(String a , String b){
+        if(a.equals(b)) return a;
+        if(a.length() != b.length()){
+            return a.length() > b.length() ? a : b;
+        }else{
+            int idx = 0;
+            while(a.charAt(idx) == b.charAt(idx)) idx++;
+            return a.charAt(idx) -'0' > b.charAt(idx) - '0' ? a : b;
+        }
+    }
 }
