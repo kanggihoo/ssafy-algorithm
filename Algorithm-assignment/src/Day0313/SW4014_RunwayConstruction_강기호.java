@@ -16,7 +16,7 @@ import java.util.StringTokenizer;
  * 내려가는 경우에는 현재위치 + x가 범위보다 작아야 하고 그때의 높이가 모두 같아야함. 
  * 특정 열 , 행 검토후에는 다시 되돌리는 작업 해주어야함. => 아니면 원본 변경하지 않고도 가능하지 않나? 
  */
-public class P4014_활주로건설 {
+public class SW4014_RunwayConstruction_강기호 {
 	static int[][] map;
 	static boolean[][] V;
 
