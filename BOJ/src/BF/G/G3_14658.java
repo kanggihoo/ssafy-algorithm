@@ -1,3 +1,4 @@
+package BF.G;
 
 // 지표면에 떨어지는 별똥별의 수를 최소화
 // LxL 트램펄린으로 별을 튕겨낼 거임.
@@ -36,33 +37,25 @@ public class G3_14658 {
             stars[i][0] = y;
             stars[i][1] = x;
         }
-        Arrays.sort(stars , (o1, o2) -> {
-            if(o1[0] != o2[0]) return Integer.compare(o1[0] , o2[0]);
-            return Integer.compare(o1[1] , o2[1]);
-        });
 
         // 별 하나 선택()
         int ans = 0;
         for(int i = 0 ; i < K ; i++){
-            for(int d = 0 ; d< 4 ; d++){
-                int[] t = stars[i];
-                int cnt = 0;
-                for(int j = 0 ; j <K ; j++) {
-                    int[] c = stars[j];
-                    if (d == 0) { // 트램펄린의 좌 상단
-                        if (t[0] <= c[0] && t[0] + L - 1 >= c[0] && t[1] <= c[1] && t[1] + L - 1 >= c[1]) cnt++;
-                    } else if (d == 1) {  // 트램펄린의 우 상단
-                        if (t[0] >= c[0] && t[0] - L + 1 <= c[0] && t[1] >= c[1] && t[1] - L + 1 <= c[1]) cnt++;
-                    } else if (d == 2) {  // 트램펄린의 좌 하단
-                        if (t[0] >= c[0] && t[0] - L + 1 <= c[0] && t[1] <= c[1] && t[1] + L - 1 >= c[1]) cnt++;
-                    } else { // 트램펄린의 우 하단
-                        if (t[0] >= c[0] && t[0] - L + 1 <= c[0] && t[1] >= c[1] && t[1] - L + 1 <= c[1]) cnt++;
-
-                    }
-                    ans = Math.max(cnt , ans);
-                }
-            }
-        }
+        	for(int j = 0 ; j < K ; j++) {
+        		int s1y = stars[i][0]; int s1x = stars[i][1];
+        		int s2y = stars[j][0]; int s2x = stars[j][1];
+        		
+        		int rectangleY = Math.min(s1y, s2y);
+        		int rectangleX = Math.min(s1x, s2x);
+        		
+        		int cnt = 0;
+        		for(int k = 0 ; k < K ; k++) {
+        			int s3y = stars[k][0];int s3x = stars[k][1];
+        			if(s3y >= rectangleY && s3y <= rectangleY+L && s3x >= rectangleX && s3x <=rectangleX+L) cnt++;
+        		}
+        		ans = Math.max(cnt, ans);
+        	}
+       }
 
         System.out.print(K-ans);
 
