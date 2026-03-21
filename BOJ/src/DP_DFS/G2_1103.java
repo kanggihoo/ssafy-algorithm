@@ -5,8 +5,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-import org.omg.PortableInterceptor.INACTIVE;
-
 public class G2_1103 {
 	static char[][] map;
 	static int[][] D;
