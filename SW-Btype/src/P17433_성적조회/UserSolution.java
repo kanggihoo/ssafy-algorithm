@@ -70,13 +70,13 @@ class UserSolution {
 		int gender = 0; // 남성
 		if(mGender[0] =='f') gender = 1; // 여성
 		
-		students[count++] = new Info(id , mGrade , gender , mScore);
-		Score s = new Score(id, mScore);
+		students[count++] = new Info(mId , mGrade , gender , mScore);
+		Score s = new Score(mId, mScore);
 		Table[mGrade][gender].add(s);
 		
 		// 학년, 성별 그룹 중 점수 가장 높은값 반환 
 		Score max = Table[mGrade][gender].last();
-		return intToId.get(max.idx);
+		return max.idx;
 	}
 	// 학생 ID의 기록 삭제 => 없는 ID이면 0반환 
 	// 삭제 후 ID 학생의 학년, 성별이 동일한 학생 중 점수 가장 낮은 학생 ID 반환 => 여러명인경우 가장 작은 값을 반환 
@@ -87,29 +87,35 @@ class UserSolution {
 		id = idToInt.get(mId);
 		
 		Info info = students[id];
-		Table[info.grade][info.gender].remove(new Score(id,info.score));
+		Table[info.grade][info.gender].remove(new Score(info.idx,info.score));
 		if(Table[info.grade][info.gender].size()==0) return 0;
 		
-		return intToId.get(Table[info.grade][info.gender].first().idx);
+		return Table[info.grade][info.gender].first().idx;
 	}
 	
 	// 학년 집합 , 성별 집합에 속하면서 점수가 mScore 이상인 학생 중 가장 점수 낮은 학생 ID 반환 => 이때 여러명이명 ID가장 작은 값반환 
 	// 무조건 학년, 성별 집합 크기는 1이상 
 	// 점수가 mScore 이상 학생 없으면 0반환 
 	public int query(int mGradeCnt, int mGrade[], int mGenderCnt, char mGender[][], int mScore) {
-		int res =Integer.MAX_VALUE;
+		int minScore =Integer.MAX_VALUE;
+		int ans = 0;
 		for(int i = 0 ; i < mGradeCnt ; i++) {
 			for(int j = 0 ; j <  mGenderCnt ; j++) {
 				int gender = 0;
 				int grade = mGrade[i];
 				if(mGender[j][0] =='f') gender = 1;
-				Score s = Table[grade][gender].floor(new Score(-1,mScore));
+				Score s = Table[grade][gender].ceiling(new Score(-1,mScore));
 				if(s==null) continue;
-				int realId = intToId.get(s.idx);
-				res = Math.min(res, realId);
+//				int realId = intToId.get(s.idx);
+				if(minScore > s.score){
+					minScore = s.score;
+					ans = s.idx;
+				}else if(minScore == s.score && ans > s.idx){
+					ans = s.idx;
+				}
 			}
 		}
 		
-		return res == Integer.MAX_VALUE ? 0 : res;
+		return minScore == Integer.MAX_VALUE ? 0 : ans;
 	}
 }
