@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.*;
 
-import sun.util.locale.StringTokenIterator;
 public class P5_11438 {
 	
 	static List<Integer>[] G;
