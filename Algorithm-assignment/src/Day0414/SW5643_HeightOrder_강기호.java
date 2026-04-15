@@ -33,46 +33,38 @@ public class SW5643_HeightOrder_강기호 {
             	G1[n1].add(n2);
             	G2[n2].add(n1);
             }
-            int[] res1 = find(G1);
-            int[] res2 = find(G2);
+            int ans = 0;
+            for(int i = 1 ; i <= N ; i++) {
+            	int res1 = find(i,G1);
+            	int res2 = find(i,G2);
+            	if(res1-1+res2 == N) ans++;
+            	
+            }
             
-           
 
-            sb.append("#").append(t).append(" ").append(0).append("\n");
+            sb.append("#").append(t).append(" ").append(ans).append("\n");
         }
  
         System.out.print(sb);
 	}
 	
-	public static int[] find(List<Integer>[]G) {
-		int[] res = new int[N+1];
+	public static int find(int t , List<Integer>[]G) {
+		
 		boolean[] v = new boolean[N+1];
-		for(int i =1 ; i <= N ; i++) res[i] = -1;
-		
-		for(int i = 1 ; i <= N ; i++) {
-			if(!v[i]) {
-				dfs(i,G,res,v);
-			}
-			
-			
-		}
-		
-		
-		return res;
+		return dfs(t , v, G);  
 	}
 	
-	public static int dfs(int idx , List<Integer>[]G , int[] res ,boolean[] V) {
-		if(res[idx] != -1) return res[idx];
-		
-		int cnt = 0;
-		V[idx] = true;
-		for(int adj : G[idx]) {
-			if(V[adj]) continue;
-			cnt += dfs(adj , G , res , V);
+	public static int dfs(int t , boolean[] v , List<Integer>[]G) {
+		v[t] = true;
+		int cnt = 1;
+		for(int adj : G[t]) {
+			if(!v[adj]) {
+				cnt += dfs(adj , v , G);
+			}
 		}
-		res[idx] = cnt+1;
-		return res[idx];
-		
+		return cnt;
 	}
+	
+	
 
 }
