@@ -1,4 +1,4 @@
-package Graph.L3;
+package graph;
 
 //public class L3_경주로건설 {
 //
