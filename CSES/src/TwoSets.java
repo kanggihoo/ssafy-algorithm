@@ -1,46 +1,42 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
 import java.util.*;
-
 public class TwoSets {
 
-    public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringBuilder sb = new StringBuilder();
-        int N = Integer.parseInt(br.readLine());
-        long sum = (long)N*(N+1)/2;
-        if(sum %2 ==0){
-            List<Integer> s1 = new ArrayList<>();
-            List<Integer> s2 = new ArrayList<>();
-            Long sum1 = 0L;
+	 public static void main(String[] args) throws IOException {
+	        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	        int N = Integer.parseInt(br.readLine());
+	        StringBuilder sb = new StringBuilder();
+	        long sum = (long)N*(N+1)/2;
+	        if(sum % 2 ==0) {
+	        	sb.append("YES\n");
+	        	long target = sum /2;
+	        	List<Integer> s1 = new ArrayList<>();
+	        	List<Integer> s2 = new ArrayList<>();
+	        	int sum1 = 0;
+	        	for(int i = N-1 ; i>=1 ; i--) {
+	        		if(sum1+i <= target) {
+	        			s1.add(i);
+	        			sum1+=i;
+	        		}else {
+	        			s2.add(i);
+	        		}
+	        	}
 
-            for(int i = N ; i>=1 ; i--){
-                if(sum/2 >= i+sum1){
-                    sum1+=i;
-                    s1.add(i);
-                }else{
-                    s2.add(i);
-                }
-            }
+	        	// 결과 출력
+	        	sb.append(s1.size()).append("\n");
+	        	for(int i : s1) {
+	        		sb.append(i).append(" ");
+	        	}
+	        	sb.append(s2.size()).append("\n");
+	        	for(int i : s2) {
+	        		sb.append(i).append(" ");
+	        	}
 
-            // 출력
-            sb.append("YES").append("\n");
-            sb.append(s1.size()).append("\n");
-            for(int i = s1.size()-1 ; i>=0 ; i--){
-                sb.append(s1.get(i)).append(" ");
-            }
-            sb.append("\n");
-            sb.append(s2.size()).append("\n");
-            for(int i = s2.size()-1 ; i>=0 ; i--){
-                sb.append(s2.get(i)).append(" ");
-            }
-        }else{
-            sb.append("NO").append("\n");
-        }
-
-
-        System.out.print(sb);
-    }
+	        }else {
+	        	sb.append("NO");
+	        }
+	        System.out.print(sb);
+	    }
 }
