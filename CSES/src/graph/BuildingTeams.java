@@ -26,16 +26,46 @@ public class BuildingTeams {
         }
         
         int[] V = new int[N+1];
+        boolean res = false;
         for(int i = 1; i <=N ; i++) {
+        	if(res) {
+    			break;
+    		}
         	if(V[i] == 0) {
         		V[i] =1;
-        		Queue<Integer> q = new ArrayDeque<Integer>();
+        		Queue<Integer> q = new ArrayDeque<>();
         		q.offer(i);
         		while(!q.isEmpty()) {
         			int cur = q.poll();
+        			int curTeam = V[cur];
+        			
+        			boolean flag=false;
+        			for(int adj : G[cur]) {
+        				if(V[adj] == 0) {
+        					V[adj] = curTeam%2+1;
+        					q.offer(adj);
+        				}else if(V[adj]==V[cur]) {
+        					flag=true;
+        					break;
+        				}
+        			}
+        			if(flag) {
+        				res = true;
+        				break;
+        			}
         			
         		}
         	}
+        	
+        }
+        if(res) {
+        	System.out.print("IMPOSSIBLE");
+        }else {
+        	StringBuilder sb = new StringBuilder();
+        	for(int i =1 ; i <=N; i++) {
+        		sb.append(V[i]).append(" ");
+        	}
+        	System.out.print(sb);
         }
        
     }
