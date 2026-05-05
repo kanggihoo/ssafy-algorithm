@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/kkh/Desktop/ssafy-algorithm/cpp/CSES/sortAndSearch/concertTickets'
+relocations:     []
+...
