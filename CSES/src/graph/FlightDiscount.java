@@ -37,7 +37,7 @@ class Info implements Comparable<Info>{
 
 
 
-public class ShortestRoutes1 {
+public class FlightDiscount {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st;
@@ -72,15 +72,23 @@ public class ShortestRoutes1 {
             if(cur.dist > dist[cur.node][cur.k]) continue;
 
             for(Edge edge : G[cur.node]){
+                long newDist;
                 if(cur.k == 1){
-                    if(dist[edge.adj][0])
+                    newDist = cur.dist+edge.w/2;
+                    if(dist[edge.adj][cur.k-1] > newDist){
+                        dist[edge.adj][cur.k-1] = newDist;
+                        pq.offer(new Info(edge.adj,  newDist, cur.k-1));
+                    }
                 }
-
-
+                newDist =  cur.dist+edge.w;
+                if(dist[edge.adj][cur.k] > newDist){
+                    dist[edge.adj][cur.k] = newDist;
+                    pq.offer(new Info(edge.adj,  newDist, cur.k));
+                }
             }
-
         }
 
+        System.out.print(dist[N][0]);
     }
 
 
