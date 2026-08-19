@@ -2,14 +2,31 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "CodeLLDB: 활성 파일 디버그",
+      "name": "C++ Debug - no input",
       "type": "lldb",
       "request": "launch",
-      "program": "${fileDirname}/${fileBasenameNoExtension}",
+      "program": "${fileDirname}/build/${fileBasenameNoExtension}",
       "args": [],
       "cwd": "${fileDirname}",
-      "console": "integratedTerminal",
-      "preLaunchTask": "C/C++: clang++ 활성 파일 빌드"
+      "preLaunchTask": "C++: build debug",
+      "terminal": "integrated",
+      "stopOnEntry": false
+    },
+    {
+      "name": "C++ Debug - input.txt",
+      "type": "lldb",
+      "request": "launch",
+      "program": "${fileDirname}/build/${fileBasenameNoExtension}",
+      "args": [],
+      "cwd": "${fileDirname}",
+      "preLaunchTask": "C++: build debug",
+      "stdio": [
+        "${workspaceFolder}/input.txt",
+        null,
+        null
+      ],
+      "terminal": "integrated",
+      "stopOnEntry": false
     }
   ]
 }

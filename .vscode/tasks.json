@@ -1,28 +1,56 @@
 {
+  "version": "2.0.0",
   "tasks": [
     {
-      "type": "cppbuild",
-      "label": "C/C++: clang++ 활성 파일 빌드",
-      "command": "/usr/bin/clang++",
-      "args": [
-        "-fcolor-diagnostics",
-        "-fansi-escape-codes",
-        "-std=c++17",
-        "-g",
-        "-O0",
-        "${file}",
-        "-o",
-        "${fileDirname}/${fileBasenameNoExtension}"
-      ],
+      "label": "C++: build debug",
+      "type": "shell",
+      "command": "mkdir -p \"build\" && /usr/bin/clang++ -std=c++17 -g -O0 -Wall -Wextra \"${file}\" -o \"build/${fileBasenameNoExtension}\"",
       "options": {
         "cwd": "${fileDirname}"
       },
-      "problemMatcher": [
-        "$gcc"
-      ],
-      "group": "build",
-      "detail": "디버거에서 생성된 작업입니다."
+      "group": {
+        "kind": "build"
+      },
+      "problemMatcher": ["$gcc"],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": true
+      }
+    },
+    {
+      "label": "C++: run",
+      "type": "shell",
+      "command": "mkdir -p \"build\" && /usr/bin/clang++ -std=c++17 -O2 -Wall -Wextra \"${file}\" -o \"build/${fileBasenameNoExtension}\" && \"./build/${fileBasenameNoExtension}\"",
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "group": {
+        "kind": "build"
+      },
+      "problemMatcher": ["$gcc"],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": true
+      }
+    },
+    {
+      "label": "C++: run with input",
+      "type": "shell",
+      "command": "mkdir -p \"build\" && /usr/bin/clang++ -std=c++17 -O2 -Wall -Wextra \"${file}\" -o \"build/${fileBasenameNoExtension}\" && \"./build/${fileBasenameNoExtension}\" < \"${workspaceFolder}/input.txt\"",
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "group": {
+        "kind": "build"
+      },
+      "problemMatcher": ["$gcc"],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": true
+      }
     }
-  ],
-  "version": "2.0.0"
+  ]
 }
